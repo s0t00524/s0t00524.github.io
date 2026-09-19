@@ -32,7 +32,7 @@ const profileTex = `\\newcommand{\\CVName}{${latexEscape(profile.name.english)}}
 \\newcommand{\\CVPosition}{${latexEscape(profile.position)}}
 \\newcommand{\\CVAffiliation}{${latexEscape(profile.laboratory)}}
 \\newcommand{\\CVEmail}{${latexEscape(profile.email)}}
-\\newcommand{\\CVWebsite}{s0t00524.github.io/s0t00524/}
+\\newcommand{\\CVWebsite}{s0t00524.github.io}
 \\newcommand{\\CVSummary}{${latexEscape(profile.research_statement)}}
 `;
 const researchTex = `\\cvsection{Research Interests}

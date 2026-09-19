@@ -1,6 +1,6 @@
 # Soto Anno — Research Portfolio
 
-This repository builds the portfolio at <https://s0t00524.github.io/s0t00524/>. The website and curriculum vitae share one structured source of truth:
+This repository builds the portfolio at <https://s0t00524.github.io/>. The website and curriculum vitae share one structured source of truth:
 
 - publication bibliography: `data/publications.bib`
 - publication-only overrides and links: `data/publications-meta.yaml`
@@ -32,7 +32,7 @@ npm install
 npm run dev
 ```
 
-Open <http://localhost:4321/s0t00524/>. Astro uses the same `/s0t00524/` base path locally as on GitHub Pages, which catches broken project-page links before deployment.
+Open <http://localhost:4321/>. Astro uses the same `/s0t00524/` base path locally as on GitHub Pages, which catches broken project-page links before deployment.
 
 ## Production build and preview
 
@@ -41,7 +41,7 @@ npm run build:web
 npm run preview
 ```
 
-Open <http://localhost:4321/s0t00524/> (or the port shown by Astro if 4321 is already in use).
+Open <http://localhost:4321/> (or the port shown by Astro if 4321 is already in use).
 
 ## CV build
 
@@ -49,7 +49,7 @@ Open <http://localhost:4321/s0t00524/> (or the port shown by Astro if 4321 is al
 npm run build:cv
 ```
 
-This generates `SotoAnno_CV.pdf` at the repository root for local inspection and stages a copy in `public/cv/` so the download works during local development. During a full build, the PDF is copied to `dist/cv/SotoAnno_CV.pdf`, producing the permanent public URL `/s0t00524/cv/SotoAnno_CV.pdf`.
+This generates `SotoAnno_CV.pdf` at the repository root for local inspection and stages a copy in `public/cv/` so the download works during local development. During a full build, the PDF is copied to `dist/cv/SotoAnno_CV.pdf`, producing the permanent public URL `cv/SotoAnno_CV.pdf`.
 
 ## Validation and full build
 

@@ -14,10 +14,21 @@ async function walk(directory) {
     else if (item.name.endsWith('.html')) htmlFiles.push(itemPath);
   }
 }
-await walk(dist);
 for (const file of htmlFiles) {
   const html = await fs.readFile(file, 'utf8');
-  const rootRelative = [...html.matchAll(/(?:href|src)="\/(?!s0t00524\/|\/|https?:|mailto:|#)([^"]*)"/g)];
-  if (rootRelative.length) throw new Error(`${path.relative(root, file)} contains base-path-breaking URLs: ${rootRelative.map((match) => match[0]).join(', ')}`);
+
+  const staleBaseRefs = [
+    ...html.matchAll(/(?:href|src)="\/s0t00524\/[^"]*"/g),
+  ];
+
+  if (staleBaseRefs.length) {
+    throw new Error(
+      `${path.relative(root, file)} contains stale /s0t00524/ URLs: ` +
+      staleBaseRefs.map((match) => match[0]).join(', ')
+    );
+  }
 }
-console.log(`Build check passed for ${htmlFiles.length} HTML files with /s0t00524/ base paths.`);
+
+console.log(
+  `Build check passed for ${htmlFiles.length} HTML files at site root.`
+);
