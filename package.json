@@ -1,0 +1,28 @@
+{
+  "name": "soto-anno-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm run generate && ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "generate": "node scripts/generate.mjs",
+    "validate": "node scripts/validate.mjs",
+    "build:web": "npm run generate && ASTRO_TELEMETRY_DISABLED=1 astro build && node scripts/check-build.mjs",
+    "build:cv": "npm run generate && node scripts/build-cv.mjs",
+    "build": "npm run build:web",
+    "build:all": "npm run validate && npm run build:cv && npm run build:web && node scripts/stage-cv.mjs && node scripts/check-build.mjs --require-cv",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.6",
+    "astro": "^7.3.3",
+    "yaml": "^2.8.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}

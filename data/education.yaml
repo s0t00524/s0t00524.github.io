@@ -1,0 +1,30 @@
+- degree: Doctor of Engineering
+  institution: Tokyo Institute of Technology, Graduate School of Computing
+  location: Japan
+  start: 2022-04
+  end: 2025-03
+  details:
+    - "Research field: Urban Dynamics Analysis, Urban Computing, Big Data Analysis"
+    - "Adviser: Prof. Masamichi Shimosaka"
+- degree: Master of Engineering
+  institution: Tokyo Institute of Technology, Graduate School of Computing
+  location: Japan
+  start: 2020-04
+  end: 2022-03
+  details:
+    - "Research field: Urban Dynamics Analysis, Urban Computing, Big Data Analysis"
+    - "Adviser: Prof. Masamichi Shimosaka"
+- degree: Bachelor of Engineering
+  institution: Tokyo Institute of Technology, Undergraduate School of Computing
+  location: Japan
+  start: 2017-04
+  end: 2020-03
+  note: 1-year earlier graduation
+  details:
+    - "Bachelor thesis field: Urban Dynamics Analysis, Big Data Analysis"
+    - "Adviser: Prof. Masamichi Shimosaka"
+- degree: High School
+  institution: Utsunomiya High School
+  location: Tochigi, Japan
+  start: 2014-04
+  end: 2017-03

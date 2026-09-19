@@ -1,0 +1,20 @@
+- role: Researcher
+  organization: NTT R&D
+  url: https://www.rd.ntt/
+  start: 2025-04
+  end: Present
+- role: Research Internship
+  organization: Yahoo! JAPAN Research
+  url: https://randd.yahoo.co.jp/en
+  start: 2020-09
+  end: 2024-03
+- role: AI Engineering Internship
+  organization: Neural Pocket Inc.
+  url: https://www.neuralpocket.com/
+  start: 2019-04
+  end: 2022-03
+- role: AI Engineering Internship
+  organization: AIQ Co., LTD.
+  url: https://aiqlab.com/
+  start: 2018-08
+  end: 2022-03

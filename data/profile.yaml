@@ -1,0 +1,43 @@
+name:
+  english: Soto Anno
+  japanese: 安納 爽響
+  display: Soto Anno, Ph.D.
+degree: Ph.D.
+affiliation: NTT R&D
+laboratory: Network Service Systems Laboratories, NTT Inc.
+position: Researcher
+location: Tokyo, Japan
+email: soto.anno@ntt.com
+biography: >-
+  I am Soto Anno (安納 爽響), a researcher at the Network Service Systems Laboratories,
+  NTT Inc. I obtained a Ph.D. degree from the Department of Computer Science at the
+  Institute of Science Tokyo (previously known as Tokyo Institute of Technology).
+research_statement: >-
+  I study data-driven methods for understanding real-world environments and building
+  reliable networked systems, spanning urban dynamics, human mobility, and vehicular communications.
+research_interests:
+  - title: Urban Intelligence
+    description: Data-driven understanding and modeling of cities, human mobility, and activities in urban environments.
+  - title: Networked Mobility
+    description: Reliable cellular and multipath communication for connected and teleoperated vehicles.
+  - title: Machine Learning
+    description: Learning from large-scale mobility, search, visual, geographic, and network measurements.
+  - title: Spatial Computing
+    description: Geographic information systems, urban computing, context-aware computing, and computer vision.
+memberships:
+  - name: Institute of Electrical and Electronics Engineers (IEEE)
+    url: https://www.ieee.org/
+  - name: Institute of Electronics, Information and Communication Engineers (IEICE)
+    url: https://www.ieice.org/eng_r/index.html
+  - name: Information Processing Society of Japan (IPSJ)
+    url: https://www.ipsj.or.jp/english/index.html
+links:
+  scholar: https://scholar.google.com/citations?user=ayhyLngAAAAJ&hl=ja&oi=ao
+  linkedin: https://www.linkedin.com/in/soto-anno-88a4061ba/
+  github: https://github.com/s0t00524
+  affiliation: https://www.rd.ntt/
+author_aliases:
+  - Anno, Soto
+  - Soto Anno
+  - 安納 爽響
+  - 安納爽響

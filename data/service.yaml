@@ -1,0 +1,17 @@
+steering:
+  - organization: IPSJ UBI
+    period: 2025-
+tpc:
+  - organization: ACM Multimedia
+    year: 2026
+  - organization: ACM ICMR
+    year: 2026
+reviewing:
+  journals:
+    - International Journal of Data Science and Analytics, Springer Nature (2026)
+    - ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT) (2026)
+    - IEEE Transactions on Knowledge and Data Engineering (TKDE) (2025)
+    - IPSJ Journal of Information Processing
+  conferences:
+    - ACM Multimedia 2025
+    - ACM SIGSPATIAL 2022

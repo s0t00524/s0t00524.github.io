@@ -1,0 +1,82 @@
+nakazato2026mapaware:
+  category: workshop
+  featured: true
+  news:
+    - date: 2026-06
+      type: accepted
+      venue: IEEE VTC2026-Fall workshop
+tsubaki2026scheduler:
+  featured: true
+  news:
+    - date: 2026-07
+      type: accepted
+      venue: IEEE VTC2026-Fall
+torii2026cloudemu:
+  category: demo
+  featured: true
+  links:
+    arxiv: https://arxiv.org/abs/2605.09910v1
+  equal_contribution:
+    - Takashi Torii
+    - Soto Anno
+  news:
+    - date: 2026-04
+      type: accepted
+      venue: IEEE NetSoft 2026 Demo Track
+anno2026mobility:
+  featured: true
+  news:
+    - date: 2026-03
+      type: accepted
+      venue: IEEE VTC2026-Spring
+tsubaki2026replication:
+  category: workshop
+  news:
+    - date: 2026-03
+      type: accepted
+      venue: IEEE VTC2026-Spring Workshop on Mission Critical and Emergency Communications
+anno2025cityscale:
+  featured: true
+  news:
+    - date: 2025-06
+      type: accepted
+      venue: Journal of Big Data
+kubota2025omnicitymood:
+  news:
+    - date: 2025-08
+      type: accepted
+      venue: ACM SIGSPATIAL 2025
+kubota2023cityscouter:
+  category: demo
+tsubaki2026schedulerjp:
+  category: domestic-conference
+tsubaki2026fecfield:
+  category: domestic-conference
+anno2026area:
+  category: domestic-conference
+tsubaki2025replicationjp:
+  category: domestic-conference
+anno2025abrjp:
+  category: domestic-conference
+hayakawa2025nightscape:
+  category: domestic-conference
+ide2024scene:
+  category: domestic-conference
+anno2024eventjp:
+  category: domestic-conference
+miyanaga2024interestjp:
+  category: domestic-conference
+anno2023crowdlifespanjp:
+  category: domestic-conference
+anno2023rnnjp:
+  category: domestic-conference
+kubota2023atmospherejp:
+  category: domestic-conference
+kubota2022digitalmap:
+  category: domestic-conference
+li2021interests:
+  category: domestic-conference
+anno2020urbanjp:
+  category: domestic-conference
+anno2020congestionjp:
+  category: domestic-conference

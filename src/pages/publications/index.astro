@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PublicationItem from '../../components/PublicationItem.astro';
+import { allPublications, categoryLabels } from '../../lib/data';
+const order = ['journal', 'international-conference', 'workshop', 'demo', 'domestic-conference', 'book-chapter', 'other'];
+const grouped = order.map((category) => ({ category, publications: allPublications.filter((publication) => publication.category === category) })).filter((group) => group.publications.length);
+---
+<BaseLayout title="Publications" description="Publications by Soto Anno, generated from a single BibTeX bibliography.">
+  <header class="page-header shell"><p class="eyebrow">Research output</p><h1>Publications</h1><p>Bibliographic records are generated directly from <code>data/publications.bib</code> and sorted automatically by year.</p><div class="page-stat"><strong>{allPublications.length}</strong><span>records · {Math.min(...allPublications.map((item) => item.year))}—{Math.max(...allPublications.map((item) => item.year))}</span></div></header>
+  <div class="shell publication-groups">
+    {grouped.map((group, index) => <section id={group.category}><div class="group-heading"><span>0{index + 1}</span><h2>{categoryLabels[group.category]}</h2><em>{group.publications.length}</em></div><div class="publication-list">{group.publications.map((publication) => <PublicationItem publication={publication} />)}</div></section>)}
+  </div>
+</BaseLayout>

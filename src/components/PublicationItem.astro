@@ -1,0 +1,23 @@
+---
+import type { Publication } from '../lib/data';
+interface Props { publication: Publication; compact?: boolean; }
+const { publication: publicationItem, compact = false } = Astro.props;
+const extraLinks = Object.entries(publicationItem.links ?? {});
+---
+<article class:list={['publication', { compact }]} id={publicationItem.key}>
+  <div class="publication-year" aria-label={`Published ${publicationItem.year}`}>{publicationItem.year}</div>
+  <div class="publication-body">
+    <h3>{publicationItem.title}</h3>
+    <p class="authors">
+      {publicationItem.authors.map((author, index) => (
+        <><span class:list={{ self: author.self, equal: author.equalContribution }}>{author.display}</span>{index < publicationItem.authors.length - 1 ? ', ' : ''}</>
+      ))}
+    </p>
+    <p class="venue"><em>{publicationItem.venue}</em>{publicationItem.volume ? `, ${publicationItem.volume}` : ''}{publicationItem.pages ? `, ${publicationItem.pages}` : ''}{publicationItem.note ? ` · ${publicationItem.note}` : ''}</p>
+    <div class="publication-links">
+      {publicationItem.url && <a href={publicationItem.url}>Paper <span aria-hidden="true">↗</span></a>}
+      {publicationItem.doi && <a href={`https://doi.org/${publicationItem.doi}`}>DOI <span aria-hidden="true">↗</span></a>}
+      {extraLinks.map(([label, url]) => <a href={url}>{label} <span aria-hidden="true">↗</span></a>)}
+    </div>
+  </div>
+</article>

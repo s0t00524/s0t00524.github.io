@@ -1,0 +1,46 @@
+---
+import { profile, sitePath } from '../lib/data';
+import '../styles/global.css';
+
+interface Props { title?: string; description?: string; }
+const { title, description = profile.research_statement } = Astro.props;
+const pageTitle = title ? `${title} — ${profile.name.english}` : profile.name.display;
+const currentPath = Astro.url.pathname;
+const nav = [
+  { href: sitePath(), label: 'Overview' },
+  { href: sitePath('publications/'), label: 'Publications' },
+  { href: sitePath('cv/'), label: 'CV' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href={sitePath('favicon.svg')} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="identity" href={sitePath()} aria-label={`${profile.name.english} home`}>
+          <span class="identity-mark" aria-hidden="true">SA</span>
+          <span>{profile.name.english}</span>
+        </a>
+        <nav aria-label="Primary navigation">
+          {nav.map((item) => <a class:list={{ active: currentPath === item.href }} href={item.href}>{item.label}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main id="content"><slot /></main>
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>© {new Date().getFullYear()} {profile.name.english}</p>
+        <p>Built from structured YAML and BibTeX.</p>
+      </div>
+    </footer>
+  </body>
+</html>

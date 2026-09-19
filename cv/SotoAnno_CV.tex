@@ -1,0 +1,120 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper,left=19mm,right=19mm,top=17mm,bottom=18mm]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage[english]{babel}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage[backend=biber,style=ieee,sorting=ydnt,maxbibnames=99,defernumbers=true,doi=true,url=true,isbn=false]{biblatex}
+
+\setmainfont{lmroman10-regular.otf}[
+  BoldFont=lmroman10-bold.otf,
+  ItalicFont=lmroman10-italic.otf,
+  BoldItalicFont=lmroman10-bolditalic.otf
+]
+\setCJKmainfont{HaranoAjiMincho-Regular.otf}[
+  BoldFont=HaranoAjiMincho-Bold.otf,
+  ItalicFont=HaranoAjiMincho-Regular.otf
+]
+\definecolor{linkblue}{HTML}{0000CC}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkblue,
+  linkcolor=black,
+  citecolor=black,
+  pdfauthor={Soto Anno},
+  pdftitle={Soto Anno - Curriculum Vitae}
+}
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\setlength{\bibitemsep}{4pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand*{\bibfont}{\fontsize{9.4}{11.3}\selectfont}
+\AtEveryBibitem{\iffieldundef{doi}{}{\clearfield{url}}}
+\addbibresource{../data/publications.bib}
+\DeclareBibliographyCategory{journals}
+\DeclareBibliographyCategory{international}
+\DeclareBibliographyCategory{domestic}
+\DeclareBibliographyCategory{otherpubs}
+
+\input{generated/profile.tex}
+\input{generated/categories.tex}
+
+\newcommand{\cvsection}[1]{%
+  \Needspace{4\baselineskip}%
+  \vspace{10pt}%
+  {\large\bfseries\itshape #1}\par\vspace{-2pt}%
+  \rule{\linewidth}{0.7pt}\par\vspace{4pt}%
+}
+\newcommand{\cvline}[2]{%
+  \begin{tabularx}{\linewidth}{@{}p{4mm}Xr@{}}
+    \textbullet & #2 & \textit{#1}
+  \end{tabularx}\vspace{1pt}%
+}
+\newcommand{\cventry}[4]{%
+  \Needspace{3\baselineskip}%
+  \begin{tabularx}{\linewidth}{@{}Xr@{}}
+    \textbf{#1} & \textbf{#3}
+  \end{tabularx}\par
+  #2\if\relax\detokenize{#4}\relax\else\space\textit{(#4)}\fi\par
+}
+
+\newcommand{\rendername}[1]{%
+  \ifboolexpr{
+    test {\ifdefstring{\namepartfamily}{Anno}} and test {\ifdefstring{\namepartgiven}{Soto}}
+    or test {\ifdefstring{\namepartfamily}{安納爽響}}
+    or test {\ifdefstring{\namepartfamily}{安納 爽響}}
+  }{\mkbibbold{#1}}{#1}%
+}
+\DeclareNameFormat{author}{%
+  \nameparts{#1}%
+  \rendername{\usebibmacro{name:given-family}{\namepartfamily}{\namepartgiven}{\namepartprefix}{\namepartsuffix}}%
+  \usebibmacro{name:andothers}%
+}
+\defbibheading{subbibliography}[\refname]{%
+  \Needspace{4\baselineskip}%
+  \vspace{5pt}{\normalsize\bfseries #1}\par\vspace{2pt}%
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\small\thepage}
+
+\begin{document}
+{\fontsize{23}{27}\selectfont\CVName\space (\CVNameJapanese)}\par\vspace{10pt}
+\textbf{\CVPosition,}\par
+\CVAffiliation\par
+\textbf{Email:} \href{mailto:\CVEmail}{\CVEmail}\par
+\textbf{Web site:} \href{https://\CVWebsite}{https://\CVWebsite}\par
+\textbf{Profiles:} \href{https://scholar.google.com/citations?user=ayhyLngAAAAJ}{Google Scholar}\quad
+\href{https://github.com/s0t00524}{GitHub}
+
+\input{generated/research.tex}
+
+\cvsection{Publications}
+\begin{refsection}
+\nocite{*}
+\printbibliography[category=journals,title={International Journals (refereed)},heading=subbibliography,resetnumbers=true]
+\printbibliography[category=international,title={International Conferences (refereed)},heading=subbibliography,resetnumbers=true]
+\printbibliography[category=otherpubs,title={Workshops and Demos},heading=subbibliography,resetnumbers=true]
+\printbibliography[category=domestic,title={Domestic Conferences},heading=subbibliography,resetnumbers=true]
+\end{refsection}
+
+\input{generated/awards.tex}
+\input{generated/education.tex}
+\input{generated/experience.tex}
+\input{generated/service.tex}
+
+\vspace{8pt}
+{\small\textit{Last updated: \today. Generated from the same structured data and BibTeX source as the website.}}
+\end{document}

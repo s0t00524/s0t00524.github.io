@@ -1,0 +1,33 @@
+- date: 2026-04
+  type: award
+  text: Received the Best Paper Award at IPSJ-UBI 89th Workshop.
+  url: https://sigubi.ipsj.or.jp/excellent/
+- date: 2026-03
+  type: presentation
+  publication: anno2026area
+  text: Presented at IPSJ-UBI 89th Workshop.
+- date: 2026-03
+  type: presentation
+  publication: tsubaki2026fecfield
+  text: Presented at the IEICE General Conference 2026.
+- date: 2025-03
+  type: milestone
+  text: Received a Ph.D. degree from Institute of Science Tokyo (previously known as Tokyo Tech).
+- date: 2024-12
+  type: award
+  text: Received the Best Paper Award at IPSJ-UBI 84th Workshop.
+- date: 2024-11
+  type: award
+  text: Received the Best Student Paper Award at the 61st Railway Cybernetics Symposium.
+- date: 2024-07
+  type: award
+  text: Received the IPSJ Yamashita SIG Research Award.
+- date: 2022-03
+  type: milestone
+  text: Received a master's degree from Tokyo Tech.
+- date: 2021-09
+  type: milestone
+  text: Received a JSPS Research Fellowship for Young Scientists (DC1).
+- date: 2020-03
+  type: milestone
+  text: Graduated from Tokyo Tech one year early.
