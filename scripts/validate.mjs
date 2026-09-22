@@ -31,6 +31,20 @@ const entries = parseBibTeX(bib);
 const keySet = new Set(entries.map((entry) => entry.key));
 for (const key of Object.keys(metadata)) if (!keySet.has(key)) throw new Error(`Metadata references unknown publication: ${key}`);
 const publications = normalizePublications(entries, metadata, profile);
+for (const publication of publications) {
+  const declared =
+    metadata[publication.key]?.equal_contribution ?? [];
+
+  const matched =
+    publication.authors.filter((author) => author.equalContribution).length;
+
+  if (declared.length !== matched) {
+    throw new Error(
+      `Equal-contribution author mismatch in ${publication.key}: ` +
+      `declared ${declared.length}, matched ${matched}`
+    );
+  }
+}
 generateNews(publications, metadata, news);
 if (!publications.some((publication) => publication.authors.some((author) => author.self))) throw new Error('No self author aliases matched');
 console.log(`Validation passed: ${publications.length} publications, ${awards.length} awards.`);

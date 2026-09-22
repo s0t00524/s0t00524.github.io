@@ -3,6 +3,9 @@ import type { Publication } from '../lib/data';
 interface Props { publication: Publication; compact?: boolean; }
 const { publication: publicationItem, compact = false } = Astro.props;
 const extraLinks = Object.entries(publicationItem.links ?? {});
+const hasEqualContribution = publicationItem.authors.some(
+  (author) => author.equalContribution
+);
 ---
 <article class:list={['publication', { compact }]} id={publicationItem.key}>
   <div class="publication-year" aria-label={`Published ${publicationItem.year}`}>{publicationItem.year}</div>
@@ -13,6 +16,11 @@ const extraLinks = Object.entries(publicationItem.links ?? {});
         <><span class:list={{ self: author.self, equal: author.equalContribution }}>{author.display}</span>{index < publicationItem.authors.length - 1 ? ', ' : ''}</>
       ))}
     </p>
+    {hasEqualContribution && (
+      <p class="author-note">
+        <span class="equal-legend">Underlined authors</span> contributed equally.
+      </p>
+    )}
     <p class="venue"><em>{publicationItem.venue}</em>{publicationItem.volume ? `, ${publicationItem.volume}` : ''}{publicationItem.pages ? `, ${publicationItem.pages}` : ''}{publicationItem.note ? ` · ${publicationItem.note}` : ''}</p>
     <div class="publication-links">
       {publicationItem.url && <a href={publicationItem.url}>Paper <span aria-hidden="true">↗</span></a>}

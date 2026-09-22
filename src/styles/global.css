@@ -81,6 +81,8 @@ nav a.active::after { content: ''; position: absolute; left: .9rem; right: .9rem
 .authors, .venue { margin-bottom: .35rem; color: var(--ink-soft); font-size: .9rem; }
 .authors .self { color: var(--ink); font-weight: 700; }
 .authors .equal { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
+.author-note { margin: -.05rem 0 .35rem; color: var(--ink-soft); font-size: .76rem; }
+.author-note .equal-legend { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: .2em;}
 .publication-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: .8rem; }
 .publication-links a { color: var(--accent); font: 500 .72rem var(--mono); text-decoration: none; text-transform: uppercase; }
 .section-tint { background: #eaf1f5; }

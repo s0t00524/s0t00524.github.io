@@ -47,6 +47,7 @@
 
 \input{generated/profile.tex}
 \input{generated/categories.tex}
+\input{generated/equal-contribution.tex}
 
 \newcommand{\cvsection}[1]{%
   \Needspace{4\baselineskip}%
@@ -74,10 +75,25 @@
     or test {\ifdefstring{\namepartfamily}{安納 爽響}}
   }{\mkbibbold{#1}}{#1}%
 }
+\newcommand{\equalauthormark}{%
+  \ifcsname
+    equalcontrib@\thefield{entrykey}@\number\value{listcount}%
+  \endcsname
+    \textsuperscript{\ensuremath{\dagger}}%
+  \fi
+}
 \DeclareNameFormat{author}{%
   \nameparts{#1}%
   \rendername{\usebibmacro{name:given-family}{\namepartfamily}{\namepartgiven}{\namepartprefix}{\namepartsuffix}}%
+  \equalauthormark%
   \usebibmacro{name:andothers}%
+}
+\renewbibmacro*{finentry}{%
+  \finentry
+  \ifcsname equalcontribentry@\thefield{entrykey}\endcsname
+    \par\smallskip
+    {\footnotesize\ensuremath{\dagger}\ Equal contribution.}%
+  \fi
 }
 \defbibheading{subbibliography}[\refname]{%
   \Needspace{4\baselineskip}%

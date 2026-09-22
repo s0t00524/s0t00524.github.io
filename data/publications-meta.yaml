@@ -46,6 +46,9 @@ kubota2025omnicitymood:
     - date: 2025-08
       type: accepted
       venue: ACM SIGSPATIAL 2025
+  equal_contribution:
+    - Yuki Kubota
+    - Kota Tsubouchi
 kubota2023cityscouter:
   category: demo
 tsubaki2026schedulerjp:

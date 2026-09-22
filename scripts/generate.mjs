@@ -56,6 +56,24 @@ for (const publication of publications.filter((item) => item.cv)) {
   categories.set(category, [...(categories.get(category) ?? []), publication.key]);
 }
 const categoriesTex = [...categories.entries()].map(([category, citationKeys]) => `\\addtocategory{${category}}{${citationKeys.join(',')}}`).join('\n');
+const equalContributionTex = publications
+  .filter((publication) => publication.cv)
+  .flatMap((publication) => {
+    const indices = publication.authors
+      .map((author, index) => author.equalContribution ? index + 1 : null)
+      .filter((index) => index !== null);
+
+    if (indices.length === 0) return [];
+
+    return [
+      `\\expandafter\\def\\csname equalcontribentry@${publication.key}\\endcsname{1}`,
+      ...indices.map(
+        (index) =>
+          `\\expandafter\\def\\csname equalcontrib@${publication.key}@${index}\\endcsname{1}`
+      ),
+    ];
+  })
+  .join('\n');
 
 await Promise.all([
   fs.writeFile(path.join(root, 'cv/generated/profile.tex'), profileTex),
@@ -65,6 +83,7 @@ await Promise.all([
   fs.writeFile(path.join(root, 'cv/generated/awards.tex'), awardsTex),
   fs.writeFile(path.join(root, 'cv/generated/service.tex'), serviceTex),
   fs.writeFile(path.join(root, 'cv/generated/categories.tex'), `${categoriesTex}\n`),
+  fs.writeFile(path.join(root, 'cv/generated/equal-contribution.tex'), `${equalContributionTex}\n`),
 ]);
 
 console.log(`Generated ${publications.length} publications and ${news.length} news items.`);
