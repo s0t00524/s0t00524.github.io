@@ -3,18 +3,26 @@ name:
   japanese: 安納 爽響
   display: Soto Anno, Ph.D.
 degree: Ph.D.
-affiliation: NTT R&D
-laboratory: Network Service Systems Laboratories, NTT Inc.
+affiliation: Network Service Systems Laboratories, NTT, Inc. #NTT R&D
+# laboratory: Network Service Systems Laboratories, NTT Inc.
 position: Researcher
 location: Tokyo, Japan
 email: soto.anno@ntt.com
-biography: >-
-  I am Soto Anno (安納 爽響), a researcher at the Network Service Systems Laboratories,
-  NTT Inc. I obtained a Ph.D. degree from the Department of Computer Science at the
-  Institute of Science Tokyo (previously known as Tokyo Institute of Technology).
+biography: |
+  Hi, I'm Soto Anno (安納 爽響), a researcher at [Network Service Systems Laboratories, NTT, Inc.](https://www.rd.ntt/e/ns/overview/), 
+  
+  I'm working on building data-driven methods for understanding real-world environments, spanning urban dynamics, human mobility, and vehicular communications.
+  
+  I obtained a Ph.D. degree from the Department of Computer Science at 
+  [Science Tokyo](https://www.isct.ac.jp/en), advised by 
+  [Prof. Masamichi Shimosaka](http://www.miubiq.comp.isct.ac.jp/). 
+  During my Ph.D. journey, I served as JSPS Research Fellow (DC1) (2022-2025). 
+  I also interned at Yahoo! JAPAN Research (2020-2024).
+
+  My broader interests include machine learning, deep learning, big data analysis,
+  geographic information systems, context-aware computing, and computer vision.
 research_statement: >-
-  I study data-driven methods for understanding real-world environments and building
-  reliable networked systems, spanning urban dynamics, human mobility, and vehicular communications.
+  I study data-driven methods for understanding real-world environments, spanning urban dynamics, human mobility, and vehicular communications.
 research_interests:
   - title: Urban Intelligence
     description: Data-driven understanding and modeling of cities, human mobility, and activities in urban environments.

@@ -36,7 +36,7 @@ nav a.active::after { content: ''; position: absolute; left: .9rem; right: .9rem
 .hero { overflow: hidden; padding: 8rem 0 7rem; color: #ecf4f8; background: var(--navy); }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(260px, .55fr); gap: clamp(4rem, 9vw, 9rem); align-items: end; }
 .eyebrow { margin-bottom: 1.5rem; color: var(--accent); font: 500 .75rem/1.4 var(--mono); letter-spacing: .16em; text-transform: uppercase; }
-.hero h1 { margin-bottom: .65rem; max-width: 760px; font: 600 clamp(4.1rem, 9vw, 7.5rem)/.83 var(--serif); letter-spacing: -.055em; }
+.hero h1 { margin-bottom: .65rem; max-width: none; font: 600 clamp(3.3rem, 6.5vw, 5.7rem)/.83 var(--serif); letter-spacing: -.055em; white-space: nowrap; }
 .name-jp { display: block; margin-top: 1rem; color: #9fb3c8; font: 500 clamp(1rem, 2vw, 1.35rem)/1.2 var(--sans); letter-spacing: .28em; }
 .hero-role { margin: 2.1rem 0 1rem; font-size: 1.15rem; font-weight: 600; }
 .hero-role span { color: var(--accent); }
@@ -64,7 +64,7 @@ nav a.active::after { content: ''; position: absolute; left: .9rem; right: .9rem
 .section-label.small h2 { font-size: 2.15rem; }
 .lead { max-width: 790px; font-size: 1.2rem; }
 .lead p:first-child { color: var(--ink); font: 500 clamp(1.55rem, 2.7vw, 2.2rem)/1.35 var(--serif); }
-.lead p:last-child { color: var(--ink-soft); }
+/* .lead p:last-child { color: var(--ink-soft); } */
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 3.3rem; }
 .section-heading > p { max-width: 480px; margin: 0; color: var(--ink-soft); }
 .text-link { color: var(--accent); font-weight: 600; text-decoration: none; }

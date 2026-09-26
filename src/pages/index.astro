@@ -2,14 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PublicationItem from '../components/PublicationItem.astro';
 import { allNews, allPublications, awards, education, experience, formatMonth, formatPeriod, profile, service, sitePath } from '../lib/data';
+import { marked } from 'marked'
 const featured = allPublications.filter((publication) => publication.featured).slice(0, 5);
 const latestNews = allNews.slice(0, 8);
+const biographyHtml = await marked.parse(profile.biography);
 ---
 <BaseLayout>
   <section class="hero">
     <div class="shell hero-grid">
       <div class="hero-main">
-        <p class="eyebrow">Researcher · Network Service Systems</p>
+        <p class="eyebrow">Computer Science Researcher</p>
         <h1>{profile.name.display}<span class="name-jp">{profile.name.japanese}</span></h1>
         <p class="hero-role">{profile.position} <span>@</span> {profile.affiliation}</p>
         <p class="hero-statement">{profile.research_statement}</p>
@@ -41,7 +43,7 @@ const latestNews = allNews.slice(0, 8);
 
   <section class="section shell two-column" id="about">
     <div class="section-label"><span>01</span><h2>About</h2></div>
-    <div class="prose lead"><p>{profile.biography}</p><p>{profile.research_interests[0].description} My broader interests include machine learning, big data analysis, geographic information systems, context-aware computing, and computer vision.</p></div>
+    <div class="prose lead" set:html={biographyHtml} />
   </section>
 
   <section class="section shell" id="research">
