@@ -1,0 +1,36 @@
+Journal of Big Data:
+  impact_factor:
+    value: 10.8
+    year: 2025
+  quartile:
+    value: Q1
+    year: 2025
+  scimago:
+    value: 1.964
+    year: 2025
+
+IEEE Access:
+  impact_factor:
+    value: 4.2
+    year: 2025
+  quartile:
+    value: Q1
+    year: 2025
+  scimago:
+    value: 0.884
+    year: 2025
+
+ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems:
+  icore:
+    value: A
+    year: 2026
+
+IEEE Vehicular Technology Conference:
+  icore:
+    value: B
+    year: 2026
+
+IEEE International Conference on Network Softwarization:
+  icore:
+    value: B
+    year: 2026

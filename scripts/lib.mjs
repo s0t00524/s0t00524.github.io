@@ -205,3 +205,44 @@ export function displayDate(value) {
   const names = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
   return month ? `${names[Number(month) - 1]} ${year}` : year;
 }
+
+function normalizeVenueText(value = '') {
+  return value
+    .toLowerCase()
+    .replace(/[{}]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function findVenueRanking(entry, venues) {
+  const type = entry.type?.toLowerCase();
+
+  if (type === 'article') {
+    const journal = normalizeVenueText(entry.fields.journal);
+
+    const match = Object.entries(venues).find(
+      ([venueName]) =>
+        normalizeVenueText(venueName) === journal
+    );
+
+    return match
+      ? { name: match[0], ...match[1] }
+      : null;
+  }
+
+  if (type === 'inproceedings') {
+    const booktitle = normalizeVenueText(entry.fields.booktitle);
+
+    const match = Object.entries(venues)
+      .sort(([a], [b]) => b.length - a.length)
+      .find(([venueName]) =>
+        booktitle.includes(normalizeVenueText(venueName))
+      );
+
+    return match
+      ? { name: match[0], ...match[1] }
+      : null;
+  }
+
+  return null;
+}
