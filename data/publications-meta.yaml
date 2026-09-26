@@ -1,6 +1,6 @@
 nakazato2026mapaware:
   category: workshop
-  featured: true
+  featured: false
   news:
     - date: 2026-06
       type: accepted
@@ -42,6 +42,7 @@ anno2025cityscale:
       type: accepted
       venue: Journal of Big Data
 kubota2025omnicitymood:
+  featured: true
   news:
     - date: 2025-08
       type: accepted

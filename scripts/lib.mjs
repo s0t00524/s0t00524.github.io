@@ -9,6 +9,10 @@ export async function readYaml(relativePath) {
   return YAML.parse(source);
 }
 
+const venues = YAML.parse(
+  await fs.readFile(path.join(root, 'data/venue.yaml'), 'utf8')
+);
+
 function findMatchingBrace(source, start) {
   const open = source[start];
   const close = open === '{' ? '}' : ')';
@@ -126,7 +130,7 @@ function venueFor(fields) {
   return fields.journal || fields.booktitle || fields.publisher || '';
 }
 
-export function normalizePublications(entries, metadata, profile) {
+export function normalizePublications(entries, metadata, profile, venues) {
   const aliases = new Set(profile.author_aliases.map(normalizedName));
   return entries.map(({ key, type, fields }) => {
     if (!fields.title || !fields.author || !fields.year) {
@@ -138,6 +142,7 @@ export function normalizePublications(entries, metadata, profile) {
       self: aliases.has(normalizedName(author.display)) || aliases.has(normalizedName(author.raw)),
       equalContribution: (meta.equal_contribution ?? []).some((name) => normalizedName(name) === normalizedName(author.display)),
     }));
+    const venueRanking = findVenueRanking({ type, fields }, venues);
     return {
       key,
       type,
@@ -146,6 +151,7 @@ export function normalizePublications(entries, metadata, profile) {
       year: Number.parseInt(fields.year, 10),
       month: fields.month ?? null,
       venue: venueFor(fields),
+      venueRanking,
       volume: fields.volume ?? null,
       number: fields.number ?? null,
       pages: fields.pages ?? null,

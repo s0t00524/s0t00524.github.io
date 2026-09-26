@@ -35,6 +35,7 @@ nav a.active::after { content: ''; position: absolute; left: .9rem; right: .9rem
 
 .hero { overflow: hidden; padding: 8rem 0 7rem; color: #ecf4f8; background: var(--navy); }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(260px, .55fr); gap: clamp(4rem, 9vw, 9rem); align-items: end; }
+.hero-grid > * { min-width: 0; }
 .eyebrow { margin-bottom: 1.5rem; color: var(--accent); font: 500 .75rem/1.4 var(--mono); letter-spacing: .16em; text-transform: uppercase; }
 .hero h1 { margin-bottom: .65rem; max-width: none; font: 600 clamp(3.3rem, 6.5vw, 5.7rem)/.83 var(--serif); letter-spacing: -.055em; white-space: nowrap; }
 .name-jp { display: block; margin-top: 1rem; color: #9fb3c8; font: 500 clamp(1rem, 2vw, 1.35rem)/1.2 var(--sans); letter-spacing: .28em; }
@@ -138,12 +139,14 @@ nav a.active::after { content: ''; position: absolute; left: .9rem; right: .9rem
 .site-footer { padding-block: 2.5rem; color: #9fb3c8; background: var(--navy); font-size: .75rem; }
 .footer-inner { display: flex; justify-content: space-between; gap: 1rem; }
 .footer-inner p { margin: 0; }
+.venue-ranking { margin-left: .55rem; color: var(--ink-soft); font-style: normal; font-weight: 400; white-space: nowrap; }
+.venue-ranking--high {color: #c83d3d; font-weight: 700; }
 
 @media (max-width: 880px) {
-  .hero { padding-block: 5.5rem; }.hero-grid, .two-column, .cv-page { grid-template-columns: 1fr; }.hero-aside { max-width: 520px; }.research-grid { grid-template-columns: 1fr 1fr; }.section-heading { align-items: start; flex-direction: column; }.page-stat { position: static; margin-top: 2rem; text-align: left; }.split-panels, .timeline-section { grid-template-columns: 1fr; }.cv-page { padding-block: 5rem; }.document-card { width: min(360px, 85%); }
+  .hero { padding-block: 5.5rem; }.hero-grid, .two-column, .cv-page { grid-template-columns: minmax(0, 1fr); }.hero-aside { max-width: 520px; }.research-grid { grid-template-columns: 1fr 1fr; }.section-heading { align-items: start; flex-direction: column; }.page-stat { position: static; margin-top: 2rem; text-align: left; }.split-panels, .timeline-section { grid-template-columns: 1fr; }.cv-page { padding-block: 5rem; }.document-card { width: min(360px, 85%); }
 }
 @media (max-width: 560px) {
-  .shell { width: min(100% - 28px, 1180px); }.header-inner { min-height: 66px; }.identity > span:last-child { display: none; }nav a { padding-inline: .55rem; font-size: .8rem; }.hero h1 { font-size: 4rem; }.button-row { align-items: stretch; flex-direction: column; }.button { justify-content: center; }.section { padding-block: 4.5rem; }.research-grid { grid-template-columns: 1fr; }.research-card { min-height: 220px; }.research-card h3 { margin-top: 3rem; }.publication { grid-template-columns: 1fr; gap: .6rem; }.publication-year { padding: 0; }.news-list li, .fact-list li, .timeline-item { grid-template-columns: 1fr; gap: .45rem; }.group-heading { grid-template-columns: 30px 1fr auto; }.group-heading h2 { font-size: 1.7rem; }.page-header { padding-block: 5rem 3rem; }.page-header h1 { font-size: 4rem; }.footer-inner { flex-direction: column; }.document-card { margin-inline: auto; }
+  .shell { width: min(100% - 28px, 1180px); }.header-inner { min-height: 66px; }.identity > span:last-child { display: none; }nav a { padding-inline: .55rem; font-size: .8rem; }.hero h1 { font-size: clamp(2.4rem, 10.5vw, 2.9rem); line-height: .9; white-space: nowrap; }.button-row { align-items: stretch; flex-direction: column; }.button { justify-content: center; }.section { padding-block: 4.5rem; }.research-grid { grid-template-columns: 1fr; }.research-card { min-height: 220px; }.research-card h3 { margin-top: 3rem; }.publication { grid-template-columns: 1fr; gap: .6rem; }.publication-year { padding: 0; }.news-list li, .fact-list li, .timeline-item { grid-template-columns: 1fr; gap: .45rem; }.group-heading { grid-template-columns: 30px 1fr auto; }.group-heading h2 { font-size: 1.7rem; }.page-header { padding-block: 5rem 3rem; }.page-header h1 { font-size: 4rem; }.footer-inner { flex-direction: column; }.document-card { margin-inline: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }

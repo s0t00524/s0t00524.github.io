@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { displayDate, generateNews, latexEscape, normalizePublications, parseBibTeX, readYaml, root } from './lib.mjs';
 
-const [profile, metadata, customNews, awards, education, experience, service, bibSource] = await Promise.all([
+const [profile, metadata, customNews, awards, education, experience, service, venues, bibSource] = await Promise.all([
   readYaml('data/profile.yaml'),
   readYaml('data/publications-meta.yaml'),
   readYaml('data/news.yaml'),
@@ -10,6 +10,7 @@ const [profile, metadata, customNews, awards, education, experience, service, bi
   readYaml('data/education.yaml'),
   readYaml('data/experience.yaml'),
   readYaml('data/service.yaml'),
+  readYaml('data/venue.yaml'),
   fs.readFile(path.join(root, 'data/publications.bib'), 'utf8'),
 ]);
 
@@ -18,7 +19,7 @@ const keys = new Set(entries.map((entry) => entry.key));
 for (const key of Object.keys(metadata)) {
   if (!keys.has(key)) throw new Error(`Publication metadata references unknown key: ${key}`);
 }
-const publications = normalizePublications(entries, metadata, profile);
+const publications = normalizePublications(entries, metadata, profile, venues);
 const news = generateNews(publications, metadata, customNews);
 
 await fs.mkdir(path.join(root, 'generated'), { recursive: true });
