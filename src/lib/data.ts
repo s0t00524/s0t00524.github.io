@@ -25,8 +25,8 @@ export const allPublications = publications as Publication[];
 export const allNews = news as NewsItem[];
 
 export const categoryLabels: Record<string, string> = {
-  journal: 'Journal Articles',
-  'international-conference': 'International Conferences',
+  journal: 'Journal Articles  (Peer-reviewed)',
+  'international-conference': 'International Conferences (Peer-reviewed)',
   'domestic-conference': 'Domestic Conferences',
   workshop: 'Workshops',
   demo: 'Demos',

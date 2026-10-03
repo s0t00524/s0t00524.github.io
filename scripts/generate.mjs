@@ -52,7 +52,7 @@ const serviceTex = `\\cvsection{Academic Service}
 const categories = new Map();
 for (const publication of publications.filter((item) => item.cv)) {
   const category = publication.category === 'journal' ? 'journals'
-    : publication.category === 'international-conference' ? 'international'
+    : ['international-conference', 'workshop', 'demo'].includes(publication.category) ? 'international'
       : publication.category === 'domestic-conference' ? 'domestic' : 'otherpubs';
   categories.set(category, [...(categories.get(category) ?? []), publication.key]);
 }

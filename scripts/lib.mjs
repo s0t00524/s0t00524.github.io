@@ -137,12 +137,19 @@ export function normalizePublications(entries, metadata, profile, venues) {
       throw new Error(`${key} must include title, author, and year`);
     }
     const meta = metadata[key] ?? {};
+    const category = meta.category ?? defaultCategory(type);
+
     const authors = splitAuthors(fields.author).map((author) => ({
       ...author,
       self: aliases.has(normalizedName(author.display)) || aliases.has(normalizedName(author.raw)),
       equalContribution: (meta.equal_contribution ?? []).some((name) => normalizedName(name) === normalizedName(author.display)),
     }));
-    const venueRanking = findVenueRanking({ type, fields }, venues);
+
+    const venueRanking = category === 'journal' || category === 'international-conference'
+      ? findVenueRanking({ type, fields }, venues)
+      : null;
+
+
     return {
       key,
       type,

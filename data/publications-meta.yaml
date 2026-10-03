@@ -50,8 +50,15 @@ kubota2025omnicitymood:
   equal_contribution:
     - Yuki Kubota
     - Kota Tsubouchi
+anno2024trains:
+  links:
+    arxiv: https://arxiv.org/abs/2410.17510
 kubota2023cityscouter:
   category: demo
+nakazato2026digitaltwinsmartcom:
+  category: domestic-conference
+nakazato2026ns3sionnans:
+  category: domestic-conference
 tsubaki2026schedulerjp:
   category: domestic-conference
 tsubaki2026fecfield:
